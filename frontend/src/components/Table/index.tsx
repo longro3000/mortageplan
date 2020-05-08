@@ -14,15 +14,21 @@ const Table = () => {
   const newPlan = useSelector((state: RootState) => {
     return state.plan.plan
   })
+  const bulkCreateStatus = useSelector((state: RootState) => {
+    return state.plan.bulkCreate
+  })
   const dispatch = useDispatch()
 
-  useEffect(
-    () => {
-      if (plans?.length === 0) {
-        dispatch(bulkCreate())
-      }
-    },[dispatch, plans]
-  )
+  useEffect(() => {
+    if (plans?.length === 0) {
+      dispatch(bulkCreate())
+    }
+  },[dispatch, plans])
+
+  useEffect(() => {
+    dispatch(fetchPlans())
+  }, [bulkCreateStatus])
+  
   useEffect(() => {
     dispatch(fetchPlans())
   },[dispatch, newPlan])
