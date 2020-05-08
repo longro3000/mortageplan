@@ -51,6 +51,6 @@ run.sh
 ```
 
 - The backend will be running on port 9090 and will be watching for changes
-- The frontend will be running on port 3000 and on the url: http://localhost:3000. You should receive the message "Hello World".
+- The frontend will be running on port 3000 and on the url: http://localhost:3000.
 
 Enjoy your day! :smile:
